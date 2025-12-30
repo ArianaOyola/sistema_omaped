@@ -1,0 +1,213 @@
+/* assets/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- 1. ESTILOS BASE --- */
+body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f0f4f8; min-height: 100vh; }
+.center-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+
+/* --- 2. ESTILOS LOGIN (Fondo Borroso) --- */
+.body-login { position: relative; background-color: #333; }
+.body-login::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../img/fondo.jpg'); 
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.7); -webkit-filter: blur(8px) brightness(0.7);
+    z-index: -1; transform: scale(1.1);
+}
+.login-container {
+    background-color: rgba(255, 255, 255, 0.92); padding: 45px; border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); width: 100%; max-width: 380px;
+    text-align: center; position: relative; backdrop-filter: blur(5px);
+}
+.header { margin-bottom: 20px; }
+.login-icon { font-size: 3rem; color: white; background-color: #6a5acd; border-radius: 50%; padding: 15px; box-shadow: 0 4px 10px rgba(106, 90, 205, 0.4); }
+.register-icon { font-size: 3rem; color: white; background-color: #4b6cb7; border-radius: 50%; padding: 15px; box-shadow: 0 4px 10px rgba(75, 108, 183, 0.4); }
+h1, .create-user-header { font-size: 1.6rem; color: #4b6cb7; margin-bottom: 5px; font-weight: 700; }
+.subtitle { color: #888; margin-top: 0; margin-bottom: 30px; font-size: 0.9rem; }
+.forgot-password-container { text-align: center; margin-top: 15px; margin-bottom: 20px; }
+
+/* Inputs y Botones */
+.input-group { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; padding: 12px 15px; background-color: #fcfcfc; }
+.input-group:focus-within { border-color: #4b6cb7; box-shadow: 0 0 5px rgba(75, 108, 183, 0.2); }
+.input-group i { color: #aaa; margin-right: 15px; font-size: 1rem; }
+.input-group input { border: none; outline: none; flex-grow: 1; font-size: 1rem; background-color: transparent; }
+.input-label { text-align: left; display: block; width: 100%; color: #555; font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; }
+.btn-primary { width: 100%; padding: 15px; border: none; border-radius: 10px; color: white; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 15px; margin-bottom: 25px; background-image: linear-gradient(to right, #4b6cb7, #182848); transition: all 0.3s ease; }
+.btn-primary:hover { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transform: translateY(-2px); }
+.btn-register { background-image: linear-gradient(to right, #6a5acd, #9346f7); }
+.footer-link { font-size: 0.95rem; display: flex; align-items: center; justify-content: center; }
+.footer-link a { color: #4b6cb7; text-decoration: none; font-weight: 600; margin-left: 5px; }
+.back-arrow { position: absolute; top: 30px; left: 30px; font-size: 1.5rem; color: #4b6cb7; cursor: pointer; }
+
+/* --- 3. ESTILOS DASHBOARD --- */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 40px; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); z-index: 100; position: relative; }
+.nav-left { display: flex; align-items: center; gap: 40px; }
+.nav-brand { font-size: 1.3rem; font-weight: 800; color: #4b6cb7; letter-spacing: 0.5px; }
+.nav-links { display: flex; align-items: center; gap: 10px; }
+.nav-link, .nav-button { text-decoration: none; color: #666; padding: 10px 15px; border-radius: 8px; transition: background-color 0.3s, color 0.3s; font-size: 0.95rem; font-weight: 500; }
+.nav-button.active { background-color: #4b6cb7; color: white; font-weight: 600; box-shadow: 0 4px 10px rgba(75, 108, 183, 0.3); }
+.nav-exit:hover { background-color: #fcebeb; color: #d9534f; }
+
+/* Perfil Usuario */
+.header-info { position: relative; }
+.user-profile-widget { display: flex; align-items: center; gap: 12px; padding: 6px 15px; background: white; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease; border: 1px solid #f0f0f0; }
+.user-profile-widget:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); transform: translateY(-1px); border-color: #e0e0e0; }
+.user-avatar-circle { width: 38px; height: 38px; background: linear-gradient(135deg, #4b6cb7, #182848); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 1.1rem; }
+.user-details { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+.user-name { font-weight: 700; color: #333; font-size: 0.9rem; }
+.user-role { font-size: 0.75rem; color: #888; font-weight: 500; }
+.user-toggle-icon { color: #aaa; font-size: 0.8rem; margin-left: 5px; }
+.user-dropdown-menu { position: absolute; top: 130%; right: 0; width: 220px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 10px 0; display: none; z-index: 1000; animation: fadeIn 0.2s ease-out; border: 1px solid #f0f0f0; }
+.user-dropdown-menu.show { display: block; }
+.user-dropdown-item { display: block; padding: 12px 20px; color: #555; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; display: flex; align-items: center; gap: 12px; }
+.user-dropdown-item:hover { background-color: #f8f9fa; color: #4b6cb7; }
+.dropdown-divider { height: 1px; background-color: #eee; margin: 5px 0; }
+.text-danger:hover { color: #d9534f !important; background-color: #fdf2f2; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- CONTENIDO GENERAL --- */
+.dashboard-content, .beneficiarios-content, .register-main-content { padding: 40px; max-width: 1300px; margin: 0 auto; }
+.dashboard-header, .beneficiarios-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.main-title, .beneficiarios-title { font-size: 2rem; color: #182848; margin: 0; font-weight: 700; }
+
+/* Componentes (Tarjetas y Gráficos) */
+.stat-card { border: none !important; color: white !important; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; background-color: white; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.stat-info { text-align: left; }
+.stat-card .stat-label { color: rgba(255,255,255, 0.9) !important; font-weight: 500; font-size: 0.9rem; }
+.stat-card .stat-number { color: white !important; font-size: 2.5rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); display: block; margin-bottom: 5px; }
+.stat-card .stat-icon-container { background-color: rgba(255,255,255,0.2) !important; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; }
+.bg-gradient-blue { background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%) !important; }
+.bg-gradient-green { background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%) !important; }
+.bg-gradient-purple { background: linear-gradient(135deg, #9346f7 0%, #5b247a 100%) !important; }
+.bg-gradient-orange { background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%) !important; }
+
+.chart-box { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); transition: all 0.3s; }
+.chart-box:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.chart-title { font-size: 1.1rem; color: #444; font-weight: 700; margin-bottom: 20px; border-left: 4px solid #4b6cb7; padding-left: 10px; }
+
+/* LAYOUT GRIDS (Importante) */
+.actions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.action-card { background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border: 1px solid #eee; transition: all 0.3s; cursor: pointer; }
+.action-card:hover { border-color: #4b6cb7; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+.action-icon { font-size: 2rem; color: #4b6cb7; margin-bottom: 15px; background-color: #eef3fb; padding: 10px; border-radius: 50%; }
+.action-card h4 { margin: 0 0 5px 0; color: #182848; font-size: 1.2rem; }
+.action-card p { margin: 0; color: #777; font-size: 0.9rem; }
+
+/* Grid de los gráficos inferiores */
+.bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+
+/* Formulario Grid */
+.register-card { background-color: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); }
+.register-main-title { font-size: 1.8rem; color: #4b6cb7; margin-bottom: 30px; font-weight: 700; }
+.register-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-section-title { font-size: 1.2rem; color: #182848; border-bottom: 2px solid #f0f4f8; padding-bottom: 5px; margin: 30px 0 20px 0; font-weight: 600; grid-column: 1 / -1; }
+.form-group { display: flex; flex-direction: column; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { font-weight: 600; color: #555; margin-bottom: 5px; font-size: 0.9rem; }
+.form-group input, .form-group select, .form-group textarea { padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+.form-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 40px; grid-column: 1 / -1; }
+.btn-save { width: auto; margin: 0; }
+.btn-secondary { padding: 12px 25px; border: 1px solid #ccc; border-radius: 10px; color: #666; background-color: #f8f8f8; font-weight: 600; cursor: pointer; }
+
+/* Utilidades */
+.table-container { background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+.search-bar { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; padding: 10px 15px; margin-bottom: 30px; width: 100%; max-width: 500px; }
+.search-bar input { border: none; outline: none; flex-grow: 1; }
+.table-responsive { overflow-x: auto; width: 100%; }
+.beneficiarios-table { min-width: 1000px; width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+.beneficiarios-table thead { background-color: #f0f4f8; color: #4b6cb7; }
+.beneficiarios-table th, .beneficiarios-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; white-space: nowrap; }
+.beneficiarios-table tbody tr:hover { background-color: #f8fcfd; }
+.btn-action { padding: 6px 8px; border: none; border-radius: 4px; cursor: pointer; color: white; margin-right: 3px; }
+.btn-action.view { background-color: #4b6cb7; }
+.btn-action.edit { background-color: #5bc0de; }
+.btn-action.delete { background-color: #d9534f; }
+.btn-excel { padding: 10px 15px; border: 1px solid #5cb85c; border-radius: 8px; color: #5cb85c; background: #f0fff0; font-weight: 600; cursor: pointer; }
+.btn-new-registro { padding: 10px 20px; border: none; border-radius: 8px; color: white; background-image: linear-gradient(to right, #4b6cb7, #182848); font-weight: 600; cursor: pointer; margin-left: 10px; }
+.col-obs { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badge-filter { background-color: #e9ecef; color: #495057; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; margin-left: 15px; text-decoration: none; font-weight: 600; transition: background-color 0.2s; }
+.badge-filter:hover { background-color: #d3d9df; }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.detail-divider { border: 0; border-top: 1px solid #eee; margin: 10px 0; }
+.text-highlight-blue { font-weight: bold; color: #4b6cb7; }
+.text-highlight-purple { font-weight: bold; color: #6a5acd; }
+.text-danger { color: red; }
+.text-success { color: green; font-weight: bold; }
+.action-footer { margin-top: 30px; text-align: right; }
+.input-readonly { background-color: #eee !important; color: #555; cursor: not-allowed; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .register-form { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .stats-cards-grid { grid-template-columns: 1fr 1fr !important; }
+    .actions-grid { grid-template-columns: 1fr; }
+    .bottom-grid { grid-template-columns: 1fr; } /* Se apila en móvil */
+    .nav-left { gap: 20px; }
+    .navbar { padding: 15px; flex-direction: column; gap: 15px; }
+    .header-info { width: 100%; display: flex; justify-content: center; }
+}
+@media (max-width: 600px) { .stats-cards-grid { grid-template-columns: 1fr !important; } }
+/* =========================================
+   ESTILOS PARA IMPRESIÓN (SOLO PAPEL)
+   ========================================= */
+@media print {
+    /* 1. Ocultar lo que no sirve en papel */
+    .navbar, 
+    .btn-secondary, 
+    .action-footer,
+    .back-arrow,
+    .user-profile-widget {
+        display: none !important;
+    }
+
+    /* 2. Limpiar fondos y sombras para ahorrar tinta y ajustar márgenes */
+    body, 
+    .register-main-content, 
+    .register-card {
+        background-color: white !important;
+        background-image: none !important; /* Quita el fondo borroso */
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* 3. Ajustar textos */
+    .register-main-title {
+        color: #000 !important;
+        text-align: center;
+        font-size: 22pt;
+        margin-bottom: 20px;
+    }
+
+    .info-box {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        page-break-inside: avoid; /* Evita que se corte a mitad de página */
+    }
+
+    /* 4. Arreglar el Grid para impresión */
+    .detail-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Forzar 2 columnas */
+        gap: 20px;
+    }
+
+    /* 5. Forzar visibilidad del mapa */
+    #mapaDetalle {
+        width: 100% !important;
+        height: 300px !important;
+        border: 1px solid #999 !important;
+        page-break-inside: avoid;
+        display: block !important;
+    }
+    
+    /* Ajuste para que Leaflet se imprima bien */
+    .leaflet-control-attribution { display: none; }
+}
