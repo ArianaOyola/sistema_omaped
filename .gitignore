@@ -1,0 +1,14 @@
+# Ignorar configuración de base de datos local (seguridad)
+/config/db.php
+
+# Ignorar archivos temporales de editores
+.vscode/
+.idea/
+*.swp
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Si usas composer
+/vendor/
